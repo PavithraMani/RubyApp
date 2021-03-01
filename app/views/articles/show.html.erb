@@ -2,3 +2,11 @@
 
 <p><strong>Title: </strong> <%= @article.title %></p>
 <p><strong>Description: </strong> <%= @article.description %></p>
+
+<tr>
+  <td><%= link_to 'Home', articles_path %></td>
+  <td>|</td>
+  <td><%= link_to 'Edit', edit_article_path(@article) %></td><!-- check the "rails routes --expanded" for edit action and add _path to it-->
+  <td>|</td>
+  <td><%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
