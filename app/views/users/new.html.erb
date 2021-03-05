@@ -1,0 +1,40 @@
+<h1 class="text-center mt-4">Signup for rubyapp21</h1></br>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= render 'shared/errors', obj: @user %>
+      <%= form_with(model: @user, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
+        <div class="form-group row">
+          <%= f.label :username, class: "col-2 col-form-label text-light" %>
+          <div class="col-8">
+            <%= f.text_field :username, class: "form-control shadow rounded", placeholder: "abc123" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :email, class: "col-2 col-form-label text-light" %>
+          <div class="col-8">
+            <%= f.email_field :email, rows: 10, class: "form-control shadow rounded", placeholder: "abc@example.com" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :password, class: "col-2 col-form-label text-light" %>
+          <div class="col-8">
+            <%= f.password_field :password, rows: 10, class: "form-control shadow rounded", placeholder: "password" %>
+          </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+          <%= f.submit "Sign Up", class: "btn mb-2 btn-outline-light" %>
+        </div>
+      <% end %>
+      <div class="form-group row justify-content-center">
+
+        <%= link_to 'Back', root_path, class: "text-info" %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
